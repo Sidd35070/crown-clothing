@@ -15,5 +15,3 @@ export const CollectionPreview = ({collection}) =>{
         </div>
     </div>
 )}
-
-{/*  ) */}
