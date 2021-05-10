@@ -4,10 +4,13 @@ import {ReactComponent as Logo} from '../../assets/crown.svg';
 import {Link } from 'react-router-dom';
 import {auth} from '../firebase/firebase.util';
 import { connect } from 'react-redux';
+import CartIcon from '../cart-icon/cart-icon.component';
+import { CartDropdown } from '../cartDropdown/cartDropdown.component';
 
 
-const Header = ({user}) => {
-    console.log(user);
+const Header = ({user, hidden}) => {
+
+    console.log(hidden);
     // const user = displayName;
     return(
     <div className="header">
@@ -23,14 +26,20 @@ const Header = ({user}) => {
             {
                 user ? <div className="option" onClick={()=> auth.signOut()}>SIGN OUT</div> : <Link className="option" to="/signin">SIGN IN</Link>
             }
+            <CartIcon></CartIcon>
         </div>
+        {
+            hidden ? null : <CartDropdown />
+        }
+        
     </div>
 )}
 
-const mapStateToProps = state =>{
-    console.log(state);
+const mapStateToProps = ({user:{displayName}, cart:{hidden}}) =>{
+    console.log(hidden);
     return  ({
-    user :state.user.displayName
+        displayName,
+        hidden
 });
 }
 
