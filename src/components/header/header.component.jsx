@@ -8,10 +8,7 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import { CartDropdown } from '../cartDropdown/cartDropdown.component';
 
 
-const Header = ({user, hidden}) => {
-
-    console.log(hidden);
-    // const user = displayName;
+const Header = ({displayName, hidden}) => {
     return(
     <div className="header">
         <Link className="logo-container" to='/'>
@@ -19,12 +16,12 @@ const Header = ({user, hidden}) => {
         </Link>
         <div className="options">
             {
-                user ? <div className="hellop" >{user}</div> : <div className="hello" >{user}</div>
+                displayName ? <div className="hellop" >{displayName}</div> : <div className="hello" >{displayName}</div>
             }
             <Link className="option" to='/shop'>SHOP</Link>
             <Link className="option" to='/contact'>CONTACT</Link>
             {
-                user ? <div className="option" onClick={()=> auth.signOut()}>SIGN OUT</div> : <Link className="option" to="/signin">SIGN IN</Link>
+                displayName ? <div className="option" onClick={()=> auth.signOut()}>SIGN OUT</div> : <Link className="option" to="/signin">SIGN IN</Link>
             }
             <CartIcon></CartIcon>
         </div>
@@ -36,7 +33,6 @@ const Header = ({user, hidden}) => {
 )}
 
 const mapStateToProps = ({user:{displayName}, cart:{hidden}}) =>{
-    console.log(hidden);
     return  ({
         displayName,
         hidden
