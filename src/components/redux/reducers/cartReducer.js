@@ -1,3 +1,5 @@
+import { addItemToCart } from "../utils/addItemToCart.util";
+
 const INITIAL_STATE = {
     hidden:true,
     count:0,
@@ -17,7 +19,7 @@ export const cartReducer =(state=INITIAL_STATE, action) => {
         return{
                 ...state,
                 count:state.count+1,
-                cartItems:[...state.cartItems, action.payload]
+                cartItems:addItemToCart(state.cartItems, action.payload)
         }
     }
     else
