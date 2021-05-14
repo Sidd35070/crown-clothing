@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom';
 import {auth} from '../firebase/firebase.util';
 import { connect } from 'react-redux';
 import CartIcon from '../cart-icon/cart-icon.component';
-import { CartDropdown } from '../cartDropdown/cartDropdown.component';
+import  CartDropdown  from '../cartDropdown/cartDropdown.component';
 
 
 const Header = ({displayName, hidden}) => {
