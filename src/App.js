@@ -10,7 +10,6 @@ import {connect} from 'react-redux';
 import {setUsername} from './components/redux/actions/userAction'
 import CheckoutPage from './pages/checkout/checkout.component';
 
-
 class App extends Component {
   
    unsubs = null;
