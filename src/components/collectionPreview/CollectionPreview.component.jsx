@@ -3,7 +3,7 @@ import CollectionItem from "../CollectionItem/collectionItem.component";
 import './CollectionPreview.styles.scss';
 
 export const CollectionPreview = (props) =>{
-console.log(props.title)
+// console.log(props.title)
  return (
     
     <div className="collection-preview">

@@ -19,7 +19,7 @@ const Header = ({displayName, hidden}) => {
                 displayName ? <div className="hellop" >{displayName}</div> : <div className="hello" >{displayName}</div>
             }
             <Link className="option" to='/shop'>SHOP</Link>
-            <Link className="option" to='/contact'>CONTACT</Link>
+            <a target="_blank" rel="noreferrer" className="option" href="https://siddharthrai.com/">CONTACT</a>
             {
                 displayName ? <div className="option" onClick={()=> auth.signOut()}>SIGN OUT</div> : <Link className="option" to="/signin">SIGN IN</Link>
             }

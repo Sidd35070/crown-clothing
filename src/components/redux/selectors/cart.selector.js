@@ -2,7 +2,7 @@ import {createSelector } from 'reselect';
 
 
 const selectCart = state =>{
-    console.log(state.cart.cartItems)
+    // console.log(state.cart.cartItems)
     return state.cart;
 } 
 

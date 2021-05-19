@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 }
 
 export const cartReducer =(state=INITIAL_STATE, action) => {
-    console.log(state)
+    // console.log(state)
     if(action.type === "SHOW_HIDE"){
         return{
                 ...state,
