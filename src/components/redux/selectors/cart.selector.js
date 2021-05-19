@@ -6,10 +6,14 @@ const selectCart = state =>{
     return state.cart;
 } 
 
+
+
 export const selectCartItems = createSelector(
     [selectCart],
     cart => cart.cartItems
 );
+
+
 
 
 

@@ -5,21 +5,22 @@ import {connect} from 'react-redux';
 import {addToCart} from '../redux/actions/cartAction';
 
 
-const CollectionItem = ({product,addToCa}) => (
+const CollectionItem = ({addToCart, product}) => {
+    // console.log(props)
+    return(
     <div className="collection-item">
             <div className="image" style={{backgroundImage:`url(${product.imageUrl})`}}></div>
             <div className="collection-footer">
                 <span className="name">{product.name}</span>
                 <span className="price">${product.price}</span>
             </div>
-            <CustomButton onClick={()=>addToCa(product)} inverted >Add to Cart</CustomButton>
+            <CustomButton onClick={()=>addToCart(product)} inverted >Add to Cart</CustomButton>
         </div> 
-)
+)}
 
 const mapDispatchToProps = dispatch =>{
-    console.log("dispatching")
     return  ({
-        addToCa: item => dispatch(addToCart(item))
+        addToCart: item => dispatch(addToCart(item))
     }
     
 )}
